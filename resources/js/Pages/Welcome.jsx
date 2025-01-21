@@ -71,7 +71,7 @@ export default function Welcome({users}) {
                             <div className='p-2 bg-orange-400 rounded-full'></div>
                             <div className='p-2 bg-green-500 rounded-full'></div>
                         </div>
-                        <div className="h-[400px] bg-stone-950 rounded-b-md text-green-500 p-2" style={{fontFamily: "Courier New", overflow: 'auto'}}>
+                        <div className="h-[400px] bg-stone-950 rounded-b-md text-green-500 p-2 text-xs xl:text-lg" style={{fontFamily: "Courier New", overflow: 'auto'}}>
                             {
                                 commands.map((command, i) => (
                                     <React.Fragment key={i}>
@@ -115,7 +115,7 @@ export default function Welcome({users}) {
                     </div>
                 </div>
             </div>
-            <div className="flex gap-5 mt-10 p-10 flex-wrap" id="skills">
+            <div className="flex gap-5 mt-10 text-center lg:text-left p-2 lg:p-10 flex-wrap" id="skills">
                 <div className="flex-1 text-white m-2 flex justify-center flex-col gap-5">
                     <h2 className="text-2xl md:text-5xl text-slate-300 font-bold">
                         Proficient in multiple frameworks and programming languages.
@@ -127,17 +127,17 @@ export default function Welcome({users}) {
                         Through the years, I've experienced deploying my Website and APIs in both Linux and Windows server. Mastered the art of single page application, server-side rendering, unit testing and database design.
                     </p>
                     <div className="flex gap-5 flex-wrap justify-around">
-                        <Box width={100} component="img" src={php_icon} alt="PHP Icon" />
-                        <Box width={100} component="img" src={js_icon} alt="JS Icon" />
-                        <Box width={100} component="img" src={react_icon} alt="React Icon" />
-                        <Box width={100} component="img" src={laravel_icon} alt="Laravel Icon" />
-                        <Box width={100} component="img" src={linux_icon} alt="Linux Icon" />
-                        <Box width={100} component="img" src={windows_icon} alt="Windows Icon" />
-                        <Box width={100} component="img" src={dotnet_icon} alt=".NET Icon" />
-                        <Box width={100} component="img" src={java_icon} alt="Java Icon" />
-                        <Box width={100} component="img" src={csharp_icon} alt="C# Icon" />
-                        <Box width={100} component="img" src={cplusplus_icon} alt="C++ Icon" />
-                        <Box width={100} component="img" src={vite_icon} alt="Vite Icon" />
+                        <Box width={100} component="img" src={php_icon} alt="PHP Icon" title="PHP Icon" />
+                        <Box width={100} component="img" src={js_icon} alt="JS Icon" title="JS Icon" />
+                        <Box width={100} component="img" src={react_icon} alt="React Icon" title="React Icon" />
+                        <Box width={100} component="img" src={laravel_icon} alt="Laravel Icon" title="Laravel Icon" />
+                        <Box width={100} component="img" src={linux_icon} alt="Linux Icon" title="Linux Icon" />
+                        <Box width={100} component="img" src={windows_icon} alt="Windows Icon" title="Windows Icon" />
+                        <Box width={100} component="img" src={dotnet_icon} alt=".NET Icon" title=".NET Icon" />
+                        <Box width={100} component="img" src={java_icon} alt="Java Icon" title="Java Icon" />
+                        <Box width={100} component="img" src={csharp_icon} alt="C# Icon" title="C# Icon" />
+                        <Box width={100} component="img" src={cplusplus_icon} alt="C++ Icon" title="C++ Icon" />
+                        <Box width={100} component="img" src={vite_icon} alt="Vite Icon" title="Vite Icon" />
 
                     </div>
                 </div>
