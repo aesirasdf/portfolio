@@ -59,13 +59,13 @@ export default function Welcome({users}) {
                 </div>
             </div>
             <div className="md:flex gap-5 sm:hidden">
-                
+
             </div>
         </nav>
         <main className='my-3 max-w-[1920px] mx-auto'>
-            <div className="flex gap-20 flex-wrap p-5 justify-center" id="about">
-                <div className="m-2 flex-1">
-                    <div onClick={() => {document.getElementById("typable").focus()}} className="shadow-2xl min-w-[270px]">
+            <div className="flex gap-20 flex-wrap p-2 sm:p-5 justify-center flex-col lg:flex-row" id="about">
+                <div className="m-0 md:m-2 flex-1">
+                    <div onClick={() => {document.getElementById("typable").focus()}} className="shadow-2xl">
                         <div className="bg-stone-800 p-2 flex gap-2 rounded-t-md">
                             <div className='p-2 bg-red-500 rounded-full'></div>
                             <div className='p-2 bg-orange-400 rounded-full'></div>
@@ -97,17 +97,17 @@ export default function Welcome({users}) {
                         </div>
                     </div>
                 </div>
-                <div className="flex-1 text-white m-2 flex justify-center flex-col gap-5 text-left items-start">
+                <div className="flex-1 text-white m-2 flex justify-center flex-col gap-5 text-left items-start md:p-5 sm:p-2">
                     <div>
                         Hi, my name is
                     </div>
-                    <h2 className="text-5xl text-slate-300 font-bold">
+                    <h2 className="text-2xl md:text-5xl text-slate-300 font-bold">
                         Jeco Renz Concepcion.
                     </h2>
-                    <h2 className="text-5xl text-slate-400 font-bold">
+                    <h2 className="text-2xl md:text-5xl text-slate-400 font-bold">
                         I build things for your devices.
                     </h2>
-                    <p className='w-[400px] mt-5 text-stone-400'>
+                    <p className='max-w-[400px] mt-5 text-stone-400'>
                         I'm a software engineer, specializing in building and designing websites, applications and everything in between.
                     </p>
                     <div>
@@ -117,13 +117,13 @@ export default function Welcome({users}) {
             </div>
             <div className="flex gap-5 mt-10 p-10 flex-wrap" id="skills">
                 <div className="flex-1 text-white m-2 flex justify-center flex-col gap-5">
-                    <h2 className="text-5xl text-slate-300 font-bold">
+                    <h2 className="text-2xl md:text-5xl text-slate-300 font-bold">
                         Proficient in multiple frameworks and programming languages.
                     </h2>
-                    <h2 className="text-5xl text-slate-400 font-bold">
+                    <h2 className="text-2xl md:text-5xl text-slate-400 font-bold">
                         Adept in Linux & Windows Server.
                     </h2>
-                    <p className='mt-5 text-stone-400'>
+                    <p className='mt-2 md:mt-5 text-stone-400'>
                         Through the years, I've experienced deploying my Website and APIs in both Linux and Windows server. Mastered the art of single page application, server-side rendering, unit testing and database design.
                     </p>
                     <div className="flex gap-5 flex-wrap justify-around">
