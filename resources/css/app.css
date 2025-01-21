@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background: rgb(22,21,54);
+    background: linear-gradient(188deg, rgba(22,21,54,1) 0%, rgb(82, 35, 35) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.logo{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+@keyframes blink{
+    0%{
+        opacity:0
+    }
+    50%{
+        opacity: 0
+    }
+    55%{
+        opacity: 1
+    }
+    100%{
+        opacity:1
+    }
+}
+
+.cursor{
+    animation: blink 1s ease-in-out infinite;
+}
