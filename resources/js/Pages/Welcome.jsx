@@ -15,6 +15,7 @@ import cplusplus_icon from '@/assets/cplusplus.svg'
 import vite_icon from '@/assets/vite.svg'
 import CustomDialog from '@/Components/CustomDialog'
 import GuestLayout from '@/Layouts/GuestLayout'
+import gsap from 'gsap'
 
 
 export default function Welcome({users}) {
@@ -35,6 +36,25 @@ export default function Welcome({users}) {
 
     useEffect(() => {
         document.getElementById("typable").focus()
+        const logo = document.getElementsByClassName("slide-in")
+        const tl = gsap.timeline()
+
+        tl.from("#terminal", {
+            width: '0px',
+            height: '0px',
+            ease: 'ease.out',
+            delay: 1,
+            duration: .3
+        })
+
+        for(let i = 0; i < logo.length; i++){
+            tl.from(logo[i], {
+                opacity: 0,
+                x: -20,
+                duration: .3
+            })
+        }
+        
     }, [])
 
     const onType = (e) => {
@@ -72,7 +92,7 @@ export default function Welcome({users}) {
 
                     <div className="flex gap-20 flex-wrap p-2 sm:p-5 justify-center flex-col lg:flex-row z-20" id="about">
                         <div className="m-0 md:m-2 flex-1">
-                            <div onClick={() => {document.getElementById("typable").focus()}} className="shadow-2xl">
+                            <div id="terminal" onClick={() => {document.getElementById("typable").focus()}} className="shadow-2xl overflow-clip">
                                 <div className="bg-stone-800 p-2 flex gap-2 rounded-t-md">
                                     <div className='p-2 bg-red-500 rounded-full'></div>
                                     <div className='p-2 bg-orange-400 rounded-full'></div>
@@ -134,17 +154,17 @@ export default function Welcome({users}) {
                                 Through the years, I've experienced deploying my Website and APIs in both Linux and Windows server. Mastered the art of single page application, server-side rendering, unit testing and database design.
                             </p>
                             <div className="flex gap-5 flex-wrap justify-around">
-                                <Box width={100} component="img" src={php_icon} alt="PHP Icon" title="PHP Icon" />
-                                <Box width={100} component="img" src={js_icon} alt="JS Icon" title="JS Icon" />
-                                <Box width={100} component="img" src={react_icon} alt="React Icon" title="React Icon" />
-                                <Box width={100} component="img" src={laravel_icon} alt="Laravel Icon" title="Laravel Icon" />
-                                <Box width={100} component="img" src={linux_icon} alt="Linux Icon" title="Linux Icon" />
-                                <Box width={100} component="img" src={windows_icon} alt="Windows Icon" title="Windows Icon" />
-                                <Box width={100} component="img" src={dotnet_icon} alt=".NET Icon" title=".NET Icon" />
-                                <Box width={100} component="img" src={java_icon} alt="Java Icon" title="Java Icon" />
-                                <Box width={100} component="img" src={csharp_icon} alt="C# Icon" title="C# Icon" />
-                                <Box width={100} component="img" src={cplusplus_icon} alt="C++ Icon" title="C++ Icon" />
-                                <Box width={100} component="img" src={vite_icon} alt="Vite Icon" title="Vite Icon" />
+                                <Box className="slide-in" width={100} component="img" src={php_icon} alt="PHP Icon" title="PHP Icon" />
+                                <Box className="slide-in" width={100} component="img" src={js_icon} alt="JS Icon" title="JS Icon" />
+                                <Box className="slide-in" width={100} component="img" src={react_icon} alt="React Icon" title="React Icon" />
+                                <Box className="slide-in" width={100} component="img" src={laravel_icon} alt="Laravel Icon" title="Laravel Icon" />
+                                <Box className="slide-in" width={100} component="img" src={linux_icon} alt="Linux Icon" title="Linux Icon" />
+                                <Box className="slide-in" width={100} component="img" src={windows_icon} alt="Windows Icon" title="Windows Icon" />
+                                <Box className="slide-in" width={100} component="img" src={dotnet_icon} alt=".NET Icon" title=".NET Icon" />
+                                <Box className="slide-in" width={100} component="img" src={java_icon} alt="Java Icon" title="Java Icon" />
+                                <Box className="slide-in" width={100} component="img" src={csharp_icon} alt="C# Icon" title="C# Icon" />
+                                <Box className="slide-in" width={100} component="img" src={cplusplus_icon} alt="C++ Icon" title="C++ Icon" />
+                                <Box className="slide-in" width={100} component="img" src={vite_icon} alt="Vite Icon" title="Vite Icon" />
 
                             </div>
                         </div>
