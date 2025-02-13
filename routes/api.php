@@ -13,3 +13,4 @@ use Illuminate\Support\Facades\Route;
 Route::post('/inquiries', [InquiryController::class, "store"]);
 
 Route::get("/valentines", [MiscController::class, "valentines"]);
+Route::get("/status", [MiscController::class, "status"]);
