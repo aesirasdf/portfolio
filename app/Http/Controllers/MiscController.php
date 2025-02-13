@@ -19,15 +19,17 @@ class MiscController extends Controller
     public function valentines(){
         $result = Cache::remember(request()->ip(), now()->addHour(), function(){
             $client = OpenAI::client(env("OPENAI_API_KEY"));
-            return $client->chat()->create([
-                "model" => "gpt-4o-mini",
-                "messages" => [
-                    ["role" => "system", "content" => "remove the beginning and end of your message. make it in json format with title and message key. add humor to the message. this message will be posted at school"],
-                    ["role" => "user", "content" => "Make a valentines message for . make it random, remove all [your name] make it generic and add from MIS Department"]
-                ]
-            ]);
+            do{
+                $res = $client->chat()->create([
+                    "model" => "gpt-4o-mini",
+                    "messages" => [
+                        ["role" => "system", "content" => "remove the beginning and end of your message. make it in json format with title and message key. add humor to the message. this message will be posted at school"],
+                        ["role" => "user", "content" => "Make a valentines message for . make it random, remove all [your name] make it generic and add from MIS Department"]
+                    ]
+                ]);
+            }while(!$res->choices[0]->message->content);
     
-    
+            return $res;
         });
         $data = [
             "ok" => true,
@@ -51,7 +53,7 @@ class MiscController extends Controller
                         ["role" => "user", "content" => "Make a valentines message for anyone. put some catholic bible verse that relates to valentines."]
                     ]
                 ]);
-            }while(!$response);
+            }while(!$response->choices[0]->message->content);
 
             return $response;
     
