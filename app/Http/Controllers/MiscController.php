@@ -36,4 +36,32 @@ class MiscController extends Controller
 
         return response()->json($data);
     }
+
+    
+
+    public function personalValentines(){
+        $result = Cache::remember(request()->ip() . " personal", now()->addMinutes(5), function(){
+            $client = OpenAI::client(env("OPENAI_API_KEY"));
+            
+            do{
+                $response  = $client->chat()->create([
+                    "model" => "gpt-4o-mini",
+                    "messages" => [
+                        ["role" => "system", "content" => "remove the beginning and end of your message. make it in json format with title and message key. remove all [your name] make it generic."],
+                        ["role" => "user", "content" => "Make a valentines message for anyone. put some catholic bible verse that relates to valentines."]
+                    ]
+                ]);
+            }while(!$response);
+
+            return $response;
+    
+    
+        });
+        $data = [
+            "ok" => true,
+            "data" => json_decode($result->choices[0]->message->content)
+        ];
+
+        return response()->json($data);
+    }
 }
