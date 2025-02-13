@@ -19,7 +19,7 @@ class MiscController extends Controller
         $result = $client->chat()->create([
             "model" => "gpt-4o-mini",
             "messages" => [
-                ["role" => "system", "content" => "remove the beginning and end of your message."],
+                ["role" => "system", "content" => "remove the beginning and end of your message. make it in json format with title and message key. add humor to the message. this message will be posted at school"],
                 ["role" => "user", "content" => "Make a valentines message for . make it random, remove all [your name] make it generic and add from MIS Department"]
             ]
         ]);
@@ -27,7 +27,7 @@ class MiscController extends Controller
 
         $data = [
             "ok" => true,
-            "data" => $result->choices[0]->message->content
+            "data" => json_decode($result->choices[0]->message->content)
         ];
 
         return response()->json($data);
