@@ -25,8 +25,11 @@ class MiscController extends Controller
         ]);
 
 
+        $data = [
+            "ok" => true,
+            "data" => $result->choices[0]->message->content
+        ];
 
-
-        return $result->choices[0]->message->content;
+        return response()->json($data);
     }
 }
