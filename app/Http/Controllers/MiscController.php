@@ -17,7 +17,7 @@ class MiscController extends Controller
     }
 
     public function valentines(){
-        $result = Cache::remember(request()->ip(), now()->addHour(), function(){
+        $result = Cache::remember(request()->ip(), now()->addMinutes(5), function(){
             $client = OpenAI::client(env("OPENAI_API_KEY"));
             do{
                 $res = $client->chat()->create([
