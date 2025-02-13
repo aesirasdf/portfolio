@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\InquiryController;
+use App\Http\Controllers\MiscController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -10,3 +11,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('/inquiries', [InquiryController::class, "store"]);
+
+Route::get("/valentines", [MiscController::class, "valentines"]);
