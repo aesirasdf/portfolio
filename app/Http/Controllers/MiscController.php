@@ -78,6 +78,10 @@ class MiscController extends Controller
             "message" => 'required|string'
         ]);
 
+        if($validator->fails()){
+            $this->BadRequest($validator);
+        }
+
 
         $client = OpenAI::client(env("OPENAI_API_KEY"));
 
