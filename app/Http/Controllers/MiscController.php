@@ -27,7 +27,7 @@ class MiscController extends Controller
                         ["role" => "user", "content" => "Make a valentines message for . make it random, remove all [your name] make it generic and add from MIS Department"]
                     ]
                 ]);
-            }while(!$res->choices[0]->message->content);
+            }while(!json_decode($res->choices[0]->message->content));
     
             return $res;
         });
@@ -53,7 +53,7 @@ class MiscController extends Controller
                         ["role" => "user", "content" => "Make a valentines message for anyone. put some catholic bible verse that relates to valentines."]
                     ]
                 ]);
-            }while(!$response->choices[0]->message->content);
+            }while(!json_decode($response->choices[0]->message->content));
 
             return $response;
     
