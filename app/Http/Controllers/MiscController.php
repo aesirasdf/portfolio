@@ -50,7 +50,7 @@ class MiscController extends Controller
                     "model" => "gpt-4o-mini",
                     "messages" => [
                         ["role" => "system", "content" => "remove the beginning and end of your message. make it in json format with title and message key. remove all [your name] make it generic."],
-                        ["role" => "user", "content" => "Make a post-valentines message for anyone. put some catholic bible verse that relates to valentines."]
+                        ["role" => "user", "content" => "Make a post-valentines message for anyone. add some humor"]
                     ]
                 ]);
             }while(!json_decode($response->choices[0]->message->content));
