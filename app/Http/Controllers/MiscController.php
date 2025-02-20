@@ -89,7 +89,7 @@ class MiscController extends Controller
             $result = $client->chat()->create([
                 "model" => "gpt-4o-mini",
                 "messages" => [
-                    ["role" => "system", "content" => "remove the beginning and end of your message. make it in json format with message key. remove all [your name] make it generic. you are a linux terminal, and you should respond like one. the user will input a linux command and you have to say appropriate message about my portfolio (Jeco Renz Concepcion, Systems Developer)"],
+                    ["role" => "system", "content" => "remove the beginning and end of your message. make it in json format with message key. remove all [your name] make it generic. you are a linux terminal, and you should respond like one. the user will input a linux command and you have to say appropriate message about my portfolio (Jeco Renz Concepcion, Systems Developer). the user is a guest that is viewing my portfolio. don't allow it to do anything bad to my portfolio only read access only"],
                     ["role" => "user", "content" => $validator->validated()["message"]]
                 ]
             ]);
