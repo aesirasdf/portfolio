@@ -11,6 +11,6 @@ abstract class Controller
             "errors" => $validator->errors(),
             "message" => "Bad Request!",
             "ok" => false
-        ])
+        ]);
     }
 }
