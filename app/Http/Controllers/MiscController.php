@@ -24,7 +24,7 @@ class MiscController extends Controller
                     "model" => "gpt-4o-mini",
                     "messages" => [
                         ["role" => "system", "content" => "remove the beginning and end of your message. make it in json format with title and message key. add humor to the message. this message will be posted at school"],
-                        ["role" => "user", "content" => "Make a valentines message for . make it random, remove all [your name] make it generic and add from MIS Department"]
+                        ["role" => "user", "content" => "Make a post-valentines message for everyone. make it random, remove all [your name] make it generic and add from MIS Department"]
                     ]
                 ]);
             }while(!json_decode($res->choices[0]->message->content));
@@ -50,7 +50,7 @@ class MiscController extends Controller
                     "model" => "gpt-4o-mini",
                     "messages" => [
                         ["role" => "system", "content" => "remove the beginning and end of your message. make it in json format with title and message key. remove all [your name] make it generic."],
-                        ["role" => "user", "content" => "Make a valentines message for anyone. put some catholic bible verse that relates to valentines."]
+                        ["role" => "user", "content" => "Make a post-valentines message for anyone. put some catholic bible verse that relates to valentines."]
                     ]
                 ]);
             }while(!json_decode($response->choices[0]->message->content));
