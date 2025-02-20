@@ -79,7 +79,7 @@ class MiscController extends Controller
         ]);
 
         if($validator->fails()){
-            $this->BadRequest($validator);
+            return $this->BadRequest($validator);
         }
 
 
